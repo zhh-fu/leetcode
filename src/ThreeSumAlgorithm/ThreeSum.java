@@ -36,4 +36,44 @@ public class ThreeSum {
         }
         return count;
     }
+
+    /**
+     * 该算法有问题。
+     * 题设要求是三个不同的数字，但是在使用该算法的时候，将因为没有传进来索引值，会遍历所有数据，使其重新计算值。
+     * 这样会导致某个值使用了两次，造成错误。
+     */
+    public int countBinarySearch(int[] ary,int target) {
+        /*
+        int realtarget = -target;
+        int length = ary.length;
+        int low = 1;
+        int high = length - 1;
+        boolean bool = false;
+        while (low != (high-1)) {
+            int mid = (high + low) / 2;
+            if (ary[mid] == realtarget) {
+                bool = true;
+                break;
+            } else if (ary[mid] > realtarget) {
+                high = mid;
+            } else if (ary[mid] < realtarget) {
+                low = mid;
+            }
+            else
+                bool = false;
+        }
+        */
+        int l = 0, h = ary.length - 1;
+        while (l <= h) {
+            int m = l + (h - l) / 2;
+            if (target == ary[m]) {
+                return m;
+            } else if (target > ary[m]) {
+                l = m + 1;
+            } else {
+                h = m - 1;
+            }
+        }
+        return -1;
+    }
 }
