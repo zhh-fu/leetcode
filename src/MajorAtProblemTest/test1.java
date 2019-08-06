@@ -11,10 +11,11 @@ public class test1 {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, -4, -5};
         int length = array.length;
-        int count = 0;
+        int count;
         long starttime = System.currentTimeMillis();
         Arrays.sort(array);
         ThreeSum testSum = new ThreeSum();
+        /*
         for (int i = 0; i < length; i++) {
             for (int j = i+1; j < length; j++) {
                 int target = -(array[i] + array[j]);
@@ -26,6 +27,8 @@ public class test1 {
                 //if (testSum.countBinarySearch(array, target)) count++;
             }
         }
+        */
+        count=testSum.sumTwoPoint(array);
         System.out.println(count);
         /*
         int num = testSum.count(array);

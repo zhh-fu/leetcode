@@ -76,4 +76,25 @@ public class ThreeSum {
         }
         return -1;
     }
+
+    public int sumTwoPoint(int[] ary){
+        int N = ary.length;
+        int count=0;
+        for (int i=0;i<N-2;i++){
+            int low = i+1, high = N-1, target = -ary[i];
+            while (low < high){
+                if (ary[low] + ary[high] == target){
+                    count++;
+                    low++;
+                    high--;
+                }
+                else if (ary[low] + ary[high] > target){
+                    high--;
+                }
+                else low++;
+            }
+        }
+        return count;
+    }
+
 }
