@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class test1 {
+public class FirstTest {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, -4, -5};
         int length = array.length;
