@@ -1,4 +1,4 @@
-package SortAlgorithm;
+package BasicAlgorithm.SortAlgorithm;
 
 public class InsertionSort extends SortAlgorithm {
     /**

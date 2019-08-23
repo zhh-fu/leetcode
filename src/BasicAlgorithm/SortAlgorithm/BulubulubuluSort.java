@@ -1,4 +1,4 @@
-package SortAlgorithm;
+package BasicAlgorithm.SortAlgorithm;
 
 public class BulubulubuluSort extends SortAlgorithm {
     /**

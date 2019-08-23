@@ -1,4 +1,4 @@
-package ThreeSumAlgorithm;
+package BasicAlgorithm;
 
 public class ThreeSum {
     /**

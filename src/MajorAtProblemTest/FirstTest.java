@@ -1,11 +1,9 @@
 package MajorAtProblemTest;
 
 
-import ThreeSumAlgorithm.ThreeSum;
+import BasicAlgorithm.ThreeSum;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class FirstTest {
     public static void main(String[] args) {
