@@ -7,7 +7,10 @@ public class LeetCodeTest {
 //        for (int param:arr) {
 //            System.out.println(param);
 //        }
-        System.out.println(solution.reverse(1534236469));
-        System.out.println(Math.pow(2,31));
+        //System.out.println(solution.reverse(1534236469));
+        //System.out.println(Math.pow(2,31));
+        String s = "()";
+        //System.out.println(solution.isValid(s));
+        System.out.println(solution.isValidAnother(s));
     }
 }

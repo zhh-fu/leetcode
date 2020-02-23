@@ -1,6 +1,7 @@
 package LeetCode;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Solution {
     /**
@@ -46,6 +47,11 @@ public class Solution {
         return null;
     }
 
+    /**
+     * reverse 输入一个数，使其各位反转输出
+     * @param target 目标值
+     * @return 输出反转的数字
+     */
     public int reverse(int target){
         String x = String.valueOf(target);
         int length = x.length();
@@ -63,6 +69,7 @@ public class Solution {
             nums[length-1-i] = tmp;
         }
         for (int i=0;i<length;i++){
+            //此句会发生溢出情况，导致输出出现偏差。
             result = result + nums[i]*(long) Math.pow(10,length-i-1);
         }
         if ((result > (long) (Math.pow(2,31)-1))||(result < (long) (-Math.pow(2,31)))){
@@ -70,5 +77,40 @@ public class Solution {
         }
         //return nums;
         return (int)result;
+    }
+
+    public boolean isValid(String s){
+        if (s.length()%2==1){
+            return false;
+        }
+        if (s.equals("")){
+            return true;
+        }
+        while (!s.equals("")){
+            if (s.contains("()")){s = s.replace("()","");}
+            else if (s.contains("{}")){s = s.replace("{}","");}
+            else if (s.contains("[]")){s = s.replace("[]","");}
+            else return false;
+        }
+        return true;
+    }
+
+    public boolean isValidAnother(String s){
+        Stack<Character> stack = new Stack<>();
+        if ((s.charAt(0)==']')||(s.charAt(0)==')')||(s.charAt(0)=='}')) return false;
+        for (int i=0;i<s.length();i++){
+            char sx = s.charAt(i),top = ' ';
+            if ((sx == '(')||(sx == '{')||(sx == '[')){
+                stack.push(sx);
+                top = stack.peek();
+            }
+            //top = stack.peek();
+            if (((top == '(') && (sx == ')'))||(top == '{'&& sx == '}')||(top == '['&& sx == ']')){
+                top = stack.pop();
+            }
+            else return false;
+        }
+        if (!stack.empty()) return false;
+        return true;
     }
 }
